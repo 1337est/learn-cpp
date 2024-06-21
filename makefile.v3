@@ -89,6 +89,9 @@ $(TARGET): $(OBJ_FILES)
 #		this case, $@ represents the target name, which is the .o file being
 #		generated. So, the output file will be named after the target file %.o
 
+test:
+	./main
+
 # The 'clean' target, which is used to remove generated files and start fresh
 # Runnings 'make clean' will remove the executable and all object files
 clean:
