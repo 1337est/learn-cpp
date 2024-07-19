@@ -1,6 +1,9 @@
+* An identifier with **external linkage** can be seen and used both from the file in which it is defined, and from other code files via a forward declaration.
+
 ## Functions have external linkage by default
 
-In order to call a function defined in another file, you just use a forward declaration for the function in any other files that want to use the function.
+In order to call a function defined in another file, you just use a forward declaration for the function in any other files that want to use the function. The forward declaration tells the compiler about the existence of the function, and the linker connects the function calls to the actual function definition.
+
 ```cpp
 // a.cpp
 #include <iostream>
@@ -21,6 +24,8 @@ int main()
     return 0;
 }
 ```
+
+In the above example, the forward declaration for `sayHi()` in `main.cpp` allows access to the `sayHi()` function defined in `a.cpp`. This in turn satisfies the compiler, and the linker is able to do it's job and link the function call to the function definition. HOWEVER, if `sayHi()` had internal linkage instead (remember, internal linkage means identifiers aren't exposed to the linker), then the linker literally wouldn't be able to connect the function call to the function definition. A linker error would result.
 
 ## Global variables with external linkage
 
