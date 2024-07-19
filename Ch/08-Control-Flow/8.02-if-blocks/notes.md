@@ -38,4 +38,15 @@ int main()
 }
 ```
 
-It's a slippery slope.
+It's a slippery slope. Adding brackets removes a lot of ambiguity.
+
+## Null statements
+- A **null statement** is an expression statement that consists of just a semicolon:
+```cpp
+if (x > 10)
+    ; // this is a null statement
+```
+
+Null statements do nothing.
+
+
